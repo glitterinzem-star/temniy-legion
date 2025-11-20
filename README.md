@@ -14,12 +14,13 @@
             background-color: #000;
             color: #00ffff;
             font-family: 'Courier New', monospace;
-            overflow: hidden;
-            height: 100vh;
+            overflow-x: hidden;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
+            padding: 20px;
         }
 
         .container {
@@ -27,6 +28,9 @@
             z-index: 10;
             position: relative;
             animation: float 3s ease-in-out infinite;
+            width: 100%;
+            max-width: 800px;
+            padding: 0 15px;
         }
 
         @keyframes float {
@@ -60,6 +64,7 @@
             margin: 1rem 0;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            width: 100%;
         }
 
         .separator {
@@ -74,12 +79,12 @@
             flex-direction: column;
             gap: 1rem;
             align-items: center;
+            width: 100%;
         }
 
         .link {
             color: #00ffff;
             text-decoration: none;
-            margin: 0 1rem;
             padding: 0.8rem 2rem;
             border: 1px solid #00ffff;
             border-radius: 5px;
@@ -119,8 +124,16 @@
             box-shadow: 0 0 10px #00ffff;
         }
 
-        .owner-button {
+        .owner-buttons {
             margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .owner-button {
             padding: 0.8rem 2rem;
             background: rgba(0, 255, 255, 0.1);
             border: 1px solid #00ffff;
@@ -130,6 +143,7 @@
             transition: all 0.3s ease;
             display: inline-block;
             font-size: 1rem;
+            width: 250px;
         }
 
         .owner-button:hover {
@@ -192,6 +206,60 @@
             0% { top: 0; }
             100% { top: 100%; }
         }
+
+        /* Медиа-запросы для адаптивности */
+        @media (max-width: 768px) {
+            .neon-text {
+                font-size: 3.5rem;
+                letter-spacing: 3px;
+                margin-bottom: 1.5rem;
+            }
+            
+            .info-section {
+                padding: 1.5rem;
+            }
+            
+            .link, .owner-button {
+                width: 220px;
+                padding: 0.7rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .neon-text {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+                margin-bottom: 1rem;
+            }
+            
+            .info-section {
+                padding: 1rem;
+            }
+            
+            .link, .owner-button {
+                width: 200px;
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .telegram-link {
+                font-size: 0.8rem;
+            }
+            
+            .channel-text, .chat-text {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .neon-text {
+                font-size: 2rem;
+            }
+            
+            .link, .owner-button {
+                width: 180px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -222,8 +290,10 @@
             <a href="https://t.me/+u6tSoAYTMQdmNWQy" class="link" target="_blank">JOIN CHAT</a>
         </div>
 
-        <a href="Https://t.me/AlOsint" class="co owner-button" target="_blank">CO OWNER</a>
-       <a href="Https://t.me/alisaflankova" class="owner-button" target="_blank">OWNER</a>
+        <div class="owner-buttons">
+            <a href="Https://t.me/alisaflankova" class="owner-button" target="_blank">OWNER</a>
+            <a href="Https://t.me/AlOsint" class="owner-button" target="_blank">CO OWNER</a>
+        </div>
     </div>
 
     <script>
