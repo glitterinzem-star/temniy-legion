@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOID.NET</title>
+    <title>Help</title>
     <style>
         * {
             margin: 0;
